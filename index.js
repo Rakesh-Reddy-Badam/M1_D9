@@ -9,21 +9,18 @@ const displayEntireNumbers = function(){
         let newNumberNode = document.createElement("div")
         newNumberNode.innerText = boardNumber
         newNumberNode.classList.add("number") 
-        newNumberNode.onclick = selectNumber
         bingoBoardContainerNode.appendChild(newNumberNode)
     }
 }
 
 //const randomNumber=Math.floor(Math.random()*77)
 const selectNumber = function(event){
-    const currentlySelectedNumber = getCurrentrNumber()
-    if (currentlySelectedNumber !== null) { 
-        currentlySelectedNumber.classList.remove("selected")
-    }
+    const currentlySelectedNumber = Math.floor(Math.random()*77)
     // SELECT NUMBER THAT HAS CHOOSEN BY THE RANDOM NUMBER
-    const clickedNumber = event.currentTarget  // This give us the HTML element that has been clicked
-    clickedNumber.classList.add("selected")    // We apply "selected" class to it
-}
-const getCurrentrNumber = function(){
-    return document.querySelector(".selected")
+    const randomNumber=document.getElementsByClassName('number')  // This give us the HTML element that has been clicked
+    for(i=0;i<randomNumber.length;i++){
+        if(parseInt(randomNumber[i].innerText)===currentlySelectedNumber){
+            randomNumber[i].classList.add("selected")
+        }
+    }
 }
