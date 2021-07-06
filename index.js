@@ -14,12 +14,14 @@ const displayEntireNumbers = function(){
 }
 
 //const randomNumber=Math.floor(Math.random()*77)
+
+const randomNumber=document.getElementsByClassName('number')  // This give us the HTML element that has been clicked
 const selectNumber = function(event){
-    const currentlySelectedNumber = Math.floor(Math.random()*77)
+    const currentlyRandomNumber = Math.floor(Math.random()*77)
     // SELECT NUMBER THAT HAS CHOOSEN BY THE RANDOM NUMBER
-    const randomNumber=document.getElementsByClassName('number')  // This give us the HTML element that has been clicked
     for(i=0;i<randomNumber.length;i++){
-        if(parseInt(randomNumber[i].innerText)===currentlySelectedNumber){
+        console.log(typeof randomNumber[i].innerText)
+        if(parseInt(randomNumber[i].innerText)===currentlyRandomNumber){
             randomNumber[i].classList.add("selected")
         }
     }

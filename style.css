@@ -23,6 +23,7 @@ h1 {
     border-color: #4a4a4a;
     padding: 12px;
     border-radius: 8px;
+    align-items:center;
     display: inline-block;
     width: 60%;
 }
